@@ -1,0 +1,14 @@
+---
+applications:
+- name: translate
+  command: pootle runserver --insecure 0.0.0.0:$PORT
+  buildpack: python_buildpack
+  memory: 256M
+  services:
+    - pootle-database
+    - pootle-redis-1
+    - pootle-redis-2
+    - pootle-redis-3
+    - translate-secrets
+  env:
+    POOTLE_SETTINGS: pootle.conf

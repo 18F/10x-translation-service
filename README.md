@@ -32,9 +32,9 @@ Create a database for Pootle.
 
     $ cf create-service aws-rds shared-psql pootle-database
 
-Create a redis instance for Poolte's workers. _Note: Pootle uses 3 DB indexes,
-however there was an issue configuring this on cloud.gov, so instead we opt for
-three separate instances._
+Create a Redis instance for Poolte's workers. _Note: Pootle uses 3 DB indexes,
+however the Redis services on cloud.gov only support DB index 0, so instead we opt for
+three separate Redis instances._
 
     $ cf create-service redis32 micro pootle-redis-1
     $ cf create-service redis32 micro pootle-redis-2

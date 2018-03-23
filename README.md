@@ -44,6 +44,11 @@ Create a user-provided store for secrets.
 
     $ cf cups translate-secrets -p '{"secret_key":"random-secret-string"}'
 
+Push the applications.
+
+    $ cf push translate -f manifest.yml
+    $ cf push translate-worker -f manifest.yml
+
 Run the migrations and setup the DB schema.
 
     $ cf run-task translate "pootle migrate --no-rq --noinput"
@@ -62,6 +67,15 @@ SSH into the instance to create the admin user.
 ## Configuration
 
 ## Deploy
+
+Deploy the worker.
+
+    $ cf zero-downtime-push translate-worker -f manifest.yml
+
+Deploy the web application.
+
+    $ cf zero-downtime-push translate -f manifest.yml
+
 
 ## Development
 

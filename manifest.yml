@@ -4,11 +4,16 @@ applications:
   command: pootle runserver --insecure 0.0.0.0:$PORT
   buildpack: python_buildpack
   memory: 256M
-  services:
-    - pootle-database
-    - pootle-redis-1
-    - pootle-redis-2
-    - pootle-redis-3
-    - translate-secrets
-  env:
-    POOTLE_SETTINGS: pootle.conf
+- name: translate-worker
+  command: pootle rqworker
+  health-check-type: process
+  memory: 128M
+  no-route: true
+env:
+  POOTLE_SETTINGS: pootle.conf
+services:
+  - pootle-database
+  - pootle-redis-1
+  - pootle-redis-2
+  - pootle-redis-3
+  - translate-secrets

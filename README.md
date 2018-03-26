@@ -66,6 +66,14 @@ SSH into the instance to create the admin user.
 
 ## Configuration
 
+### Permissions
+
+By default, Pootle allows anonymous users to suggest translations. Projects may
+wish to disable this in the [permissions
+settings](https://translate.app.cloud.gov/admin/permissions/). We have disabled
+anonymous suggestions for Phase I.
+
+
 ## Deploy
 
 Deploy the worker.
@@ -79,11 +87,31 @@ Deploy the web application.
 
 ## Development
 
+### Pootle hacking
+
+- [ ] Sign up for the [Pootle mailing](https://lists.sourceforge.net/lists/listinfo/translate-pootle) list.
+- [ ] Join the Pootle [Gitter chat](https://gitter.im/translate/pootle).
+- [ ] Read the Pootle [contributing docs](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/developers/contributing.html).
+
 ## Pootle evaluation
 
 ### What Pootle features are useful today?
 
 ### What features are missing that agencies need today?
+
+### Translation Memory
+
+This is supported out of the box using an external [Translation Memory
+service](http://amagama.translatehouse.org/). You can setup an instance of
+Elasticsearch for a private TM server instance.
+
+Pootle supports multiple TM servers, so it will keep a local instance up to
+date, but can still use an external one for read-only lookups from external
+projects.
+
+For projects that wish to have their own Pootle instance, they can share TM by
+sharing the external TM server.
+
 
 ### Machine translation
 

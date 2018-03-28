@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/python:2.7-jessie-node
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          command: echo ok
+
+  publish-to-git:
+    docker:
+      - image: 18fgsa/cloud-foundry-cli
+    steps:
+      - checkout
+      - run:
+          name: Publish to git
+          # TODO monitor the results with cf logs and cf tasks
+          command: cf run-task --name pootle-sync translate 'bin/publish-to-git.sh' -m 128m
+
+workflows:
+  version: 2
+  continuous-integration:
+    jobs:
+      - test
+
+  daily:
+    triggers:
+      - schedule:
+          cron: "0 17 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - publish-to-git

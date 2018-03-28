@@ -1,3 +1,4 @@
 Pootle==2.8.2
 cfenv==0.5.3
 psycopg2-binary==2.7.4
+git+https://github.com/translate/pootle_fs_git.git

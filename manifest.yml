@@ -1,7 +1,7 @@
 ---
 applications:
 - name: translate
-  command: pootle runserver --insecure 0.0.0.0:$PORT
+  command: bin/start.sh
   buildpack: python_buildpack
   memory: 256M
 - name: translate-worker

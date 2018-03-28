@@ -93,6 +93,23 @@ Deploy the web application.
 - [ ] Join the Pootle [Gitter chat](https://gitter.im/translate/pootle).
 - [ ] Read the Pootle [contributing docs](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/developers/contributing.html).
 
+
+### Setup
+
+Create a local configuration file.
+
+Create an SSH key.
+
+    $ ssh-keygen -b 4096 -f git-ssh-key
+
+Add this key as a deploy key in the project under the repo's `Settings > Deploy
+keys`.
+
+Create the JSON secrets for the user provided service.
+
+    $ cf update-user-provided-service translate-secrets -p <(bin/create-user-provided-service.sh git-ssh-key)
+
+
 ## Pootle evaluation
 
 ### What Pootle features are useful today?

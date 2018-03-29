@@ -132,7 +132,7 @@ API](https://platform-api.usa.gov/#!/text_assets/Api_V1_TextAssets_show).
     $ node index.js > templates.pot
 
 This outputs content for a POT file to be used as the template. Rename this to
-`templates.pot` and commit it do the [translations
+`templates.pot` and commit it to the [translations
 repo](https://github.com/adborden/usa-gov-example-translations).
 
 

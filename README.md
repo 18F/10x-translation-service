@@ -65,19 +65,26 @@ three separate Redis instances._
     $ cf create-service redis32 micro pootle-redis-2
     $ cf create-service redis32 micro pootle-redis-3
 
-Create a user-provided store for secrets.
+Create an SSH key to sync with Git.
 
-    $ cf cups translate-secrets -p '{"secret_key":"random-secret-string"}'
+    $ ssh-keygen -b 4096 -f git-ssh-key
 
-Push the applications.
+Add this key as a write/deploy key in the project. In GitHub, this is under the
+repo's `Settings > Deploy keys`.
+
+Create the JSON secrets for the user-provided service.
+
+    $ cf update-user-provided-service translate-secrets -p <(bin/create-user-provided-service.sh git-ssh-key)
+
+Push the application and worker.
 
     $ cf push translate -f manifest.yml
     $ cf push translate-worker -f manifest.yml
 
 Run the migrations and setup the DB schema.
 
-    $ cf run-task translate "pootle migrate --no-rq --noinput"
-    $ cf run-task translate "pootle initdb --no-rq"
+    $ cf run-task translate "pootle migrate --no-rq --noinput" -m 128m
+    $ cf run-task translate "pootle initdb --no-rq" -m 128m
 
 SSH into the instance to create the admin user.
 
@@ -140,16 +147,7 @@ repo](https://github.com/adborden/usa-gov-example-translations).
 
 Create a local configuration file.
 
-Create an SSH key.
-
-    $ ssh-keygen -b 4096 -f git-ssh-key
-
-Add this key as a deploy key in the project under the repo's `Settings > Deploy
-keys`.
-
-Create the JSON secrets for the user provided service.
-
-    $ cf update-user-provided-service translate-secrets -p <(bin/create-user-provided-service.sh git-ssh-key)
+    $ pootle init
 
 
 ## Pootle evaluation

@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/18F/10x-translation-service.svg?style=svg)](https://circleci.com/gh/18F/10x-translation-service)
+
 # 10x Open Source Translation Service
 
 _We are currently in the initial phase of 10x: Investigation. This phase is two
@@ -15,6 +17,17 @@ The goal of this initial phase is to investigate if there is an opportunity
 here. A soft yes or a hard no on whether to continue is what we're looking for.
 
 
+## Who are we?
+
+Team members:
+
+- Aaron D Borden, software developer, 18F
+
+Advisors:
+
+- Laura Godfrey, Multilingual Strategies Lead, Office of Products and Platforms
+
+
 ## Tasks
 
 1. Setup an instance of Pootle
@@ -22,6 +35,17 @@ here. A soft yes or a hard no on whether to continue is what we're looking for.
 1. Demonstrate how content gets in and how translations get out
 1. Get feedback
 1. Document what worked and what did not
+
+
+## Progress
+
+We are tracking the work for this Phase on our [Kanban
+board](https://github.com/18F/10x-translation-service/projects/1).
+
+Any issues or ideas that we want to keep track of for later are being noted in
+the [GitHub issues](https://github.com/18F/10x-translation-service/issues). At
+the end of this Phase, we'll identify work that we think will be good candidates
+for [Phase II: Discovery](https://github.com/18F/10x-translation-service/milestone/1).
 
 
 ## Initial setup

@@ -1,13 +1,17 @@
 const os = require('os');
 
 const axios = require('axios');
+const wrap = require('word-wrap');
 const argv = require('minimist')(process.argv.slice(2));
+
+const MAX_LINE_LENGTH = 80;
 
 function main(options) {
   const narratives = axios.create({
     baseURL: 'https://platform-api.usa.gov/api/v1/usagov/narratives.json?terms_filter=language%3AEnglish%3A%3Astatus%3APublished',
   });
 
+  writeHeader();
   narratives
     .get()
     .then((response) => {
@@ -35,7 +39,6 @@ function unescapeHtml(str) {
 function writeHeader() {
   writeln('msgid ""');
   writeln('msgstr ""');
-  writeln('"Content-Type: text/plain; charset=UTF-8\n"');
 }
 
 function writeNarrative(narrative, field, transform) {
@@ -45,6 +48,7 @@ function writeNarrative(narrative, field, transform) {
     reference: `https://platform-api.usa.gov:443/api/v1/usagov/narratives/${narrative.id}.json#${field}`,
     content: f(narrative[field]),
   });
+  writeln(`msgstr ""`);
 }
 
 
@@ -55,17 +59,25 @@ function writeln(data) {
 function writeChunk(data) {
   writeln('');
   writeln(`#: ${data.reference}`);
-  if (data.content.length <= 80) {
+  if (data.content.length <= MAX_LINE_LENGTH) {
     writeln(`msgid "${data.content}"`);
     return;
   }
 
   // Wrap long-form content
   writeln('msgid ""');
-  let i = 0;
-  while (i < data.content.length) {
-    writeln(`"${data.content.substr(i, 80)}"`);
-    i += 80;
+  for (let token of tokenizer(data.content)) {
+    writeln(`"${token}"`);
+  }
+}
+
+function* tokenizer(content) {
+  let token;
+  let rest = wrap(content, {indent: '', width: MAX_LINE_LENGTH}); // Insert line breaks
+  while (rest) {
+    [token] = rest.split(/\n/, 1); // Split the first/next line
+    rest = rest.substr(token.length + 1); // Save the rest
+    yield token; // yield the next line
   }
 }
 

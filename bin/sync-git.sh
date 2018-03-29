@@ -1,5 +1,5 @@
 #!/bin/bash
-# publish-to-git.sh
+# sync-git.sh
 #
 # Pull changes from git and sync them to the database.
 

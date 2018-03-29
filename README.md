@@ -95,7 +95,7 @@ https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html
 For the purposes of Phase I, we loaded in some sample content from [USA.gov's
 API](https://platform-api.usa.gov/#!/text_assets/Api_V1_TextAssets_show).
 
-    $ npm run sample:usa-gov-example
+    $ node index.js > templates.pot
 
 This outputs content for a POT file to be used as the template. Rename this to
 `templates.pot` and commit it do the [translations

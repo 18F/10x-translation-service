@@ -31,8 +31,6 @@ mkdir -m 0700 -p "$(dirname $ssh_key_file)"
 (
   umask 077
   echo "$VCAP_SERVICES" | jq --raw-output '.["user-provided"][0].credentials.ssh_key' > "$ssh_key_file"
-  ssh-add "$ssh_key_file" && echo ssh-agent ok
-  ps | grep ssh
   echo "write $ssh_key_file ok"
 )
 

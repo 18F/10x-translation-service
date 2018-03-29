@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Publish to git
           # TODO monitor the results with cf logs and cf tasks
-          command: cf run-task --name pootle-sync translate 'bin/publish-to-git.sh' -m 128m
+          command: cf run-task --name pootle-sync translate 'bin/sync-git.sh' -m 128m
 
 workflows:
   version: 2

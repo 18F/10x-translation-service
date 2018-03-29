@@ -2,8 +2,9 @@
 
 # 10x Open Source Translation Service
 
-_We are currently in the initial phase of 10x: Investigation. This phase is two
-weeks long and ends approximately March 30th, 2018._
+_We are currently in the initial phase of [10x](https://10x.gsa.gov/):
+Investigation. This phase is two weeks long and ends approximately March 30th,
+2018._
 
 > 60.6 million Americans are not fluent in English. Despite this, most federal
 > web content is only available in English. Having content available in multiple
@@ -21,11 +22,11 @@ here. A soft yes or a hard no on whether to continue is what we're looking for.
 
 Team members:
 
-- Aaron D Borden, software developer, 18F
+- Aaron D Borden, software developer, [18F](https://18f.gsa.gov/)
 
 Advisors:
 
-- Laura Godfrey, Multilingual Strategies Lead, Office of Products and Platforms
+- Laura Godfrey, Multilingual Strategies Lead, [Office of Products and Platforms](https://www.gsa.gov/about-us/organization/federal-acquisition-service/technology-transformation-services/office-of-products-and-programs)
 
 
 ## Tasks

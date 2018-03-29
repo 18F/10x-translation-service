@@ -85,6 +85,23 @@ Deploy the web application.
     $ cf zero-downtime-push translate -f manifest.yml
 
 
+## Workflow
+
+
+## Import/export of content
+
+https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html
+
+For the purposes of Phase I, we loaded in some sample content from [USA.gov's
+API](https://platform-api.usa.gov/#!/text_assets/Api_V1_TextAssets_show).
+
+    $ node index.js > templates.pot
+
+This outputs content for a POT file to be used as the template. Rename this to
+`templates.pot` and commit it do the [translations
+repo](https://github.com/adborden/usa-gov-example-translations).
+
+
 ## Development
 
 ### Pootle hacking
@@ -92,6 +109,23 @@ Deploy the web application.
 - [ ] Sign up for the [Pootle mailing](https://lists.sourceforge.net/lists/listinfo/translate-pootle) list.
 - [ ] Join the Pootle [Gitter chat](https://gitter.im/translate/pootle).
 - [ ] Read the Pootle [contributing docs](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/developers/contributing.html).
+
+
+### Setup
+
+Create a local configuration file.
+
+Create an SSH key.
+
+    $ ssh-keygen -b 4096 -f git-ssh-key
+
+Add this key as a deploy key in the project under the repo's `Settings > Deploy
+keys`.
+
+Create the JSON secrets for the user provided service.
+
+    $ cf update-user-provided-service translate-secrets -p <(bin/create-user-provided-service.sh git-ssh-key)
+
 
 ## Pootle evaluation
 

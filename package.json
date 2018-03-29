@@ -1,0 +1,27 @@
+{
+  "name": "pootle-deploy",
+  "version": "1.0.0",
+  "description": "Experiment to deploy Pootle on cloud.gov",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "minimist": "^1.2.0",
+    "word-wrap": "^1.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sample:usa-gov-example": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/18F/10x-translation-service.git"
+  },
+  "author": "Aaron D Borden <adborden@a14n.net>",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/18F/10x-translation-service/issues"
+  },
+  "homepage": "https://github.com/18F/10x-translation-service#readme",
+  "public": false
+}

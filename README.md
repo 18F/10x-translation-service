@@ -88,6 +88,26 @@ SSH into the instance to create the admin user.
     $ pootle verify_user admin
 
 
+### Continuous integration tasks
+
+We use continuous integration to run some automated tasks, like keeping the git
+backend in sync with Pootle.
+
+Create a [cloud.gov service account](https://cloud.gov/docs/services/cloud-gov-service-account/).
+
+    $ cf create-service cloud-gov-service-account space-deployer ci-deployer
+    $ cf create-service-key  ci-deployer ci-deployer-key
+    $ cf service-key ci-deployer ci-deployer-key
+
+Use the `username` and `password` output to [configure the environment
+variables](https://github.com/18F/cloud-foundry-cli#configuration) in the
+CircleCI [project
+settings](https://circleci.com/gh/18F/10x-translation-service/edit#env-vars).
+
+Or, if you're using a different CI, use the `username` and `password` to
+configure `cf` access as appropriate.
+
+
 ## Configuration
 
 ### Permissions

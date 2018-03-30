@@ -2,8 +2,9 @@
 
 # 10x Open Source Translation Service
 
-_We are currently in the initial phase of 10x: Investigation. This phase is two
-weeks long and ends approximately March 30th, 2018._
+_We are currently in the initial phase of [10x](https://10x.gsa.gov/):
+Investigation. This phase is two weeks long and ends approximately April 4th,
+2018._
 
 > 60.6 million Americans are not fluent in English. Despite this, most federal
 > web content is only available in English. Having content available in multiple
@@ -21,11 +22,11 @@ here. A soft yes or a hard no on whether to continue is what we're looking for.
 
 Team members:
 
-- Aaron D Borden, software developer, 18F
+- Aaron D Borden, software developer, [18F](https://18f.gsa.gov/)
 
-Advisors:
+Advisers:
 
-- Laura Godfrey, Multilingual Strategies Lead, Office of Products and Platforms
+- Laura Godfrey, Multilingual Strategies Lead, [Office of Products and Platforms](https://www.gsa.gov/about-us/organization/federal-acquisition-service/technology-transformation-services/office-of-products-and-programs)
 
 
 ## Tasks
@@ -47,6 +48,8 @@ the [GitHub issues](https://github.com/18F/10x-translation-service/issues). At
 the end of this Phase, we'll identify work that we think will be good candidates
 for [Phase II: Discovery](https://github.com/18F/10x-translation-service/milestone/1).
 
+We post progress updates in [updates](updates).
+
 
 ## Initial setup
 
@@ -64,19 +67,26 @@ three separate Redis instances._
     $ cf create-service redis32 micro pootle-redis-2
     $ cf create-service redis32 micro pootle-redis-3
 
-Create a user-provided store for secrets.
+Create an SSH key to sync with Git.
 
-    $ cf cups translate-secrets -p '{"secret_key":"random-secret-string"}'
+    $ ssh-keygen -b 4096 -f git-ssh-key
 
-Push the applications.
+Add this key as a write/deploy key in the project. In GitHub, this is under the
+repo's `Settings > Deploy keys`.
+
+Create the JSON secrets for the user-provided service.
+
+    $ cf update-user-provided-service translate-secrets -p <(bin/create-user-provided-service.sh git-ssh-key)
+
+Push the application and worker.
 
     $ cf push translate -f manifest.yml
     $ cf push translate-worker -f manifest.yml
 
 Run the migrations and setup the DB schema.
 
-    $ cf run-task translate "pootle migrate --no-rq --noinput"
-    $ cf run-task translate "pootle initdb --no-rq"
+    $ cf run-task translate "pootle migrate --no-rq --noinput" -m 128m
+    $ cf run-task translate "pootle initdb --no-rq" -m 128m
 
 SSH into the instance to create the admin user.
 
@@ -142,7 +152,7 @@ API](https://platform-api.usa.gov/#!/text_assets/Api_V1_TextAssets_show).
     $ node index.js > templates.pot
 
 This outputs content for a POT file to be used as the template. Rename this to
-`templates.pot` and commit it do the [translations
+`templates.pot` and commit it to the [translations
 repo](https://github.com/adborden/usa-gov-example-translations).
 
 
@@ -159,16 +169,7 @@ repo](https://github.com/adborden/usa-gov-example-translations).
 
 Create a local configuration file.
 
-Create an SSH key.
-
-    $ ssh-keygen -b 4096 -f git-ssh-key
-
-Add this key as a deploy key in the project under the repo's `Settings > Deploy
-keys`.
-
-Create the JSON secrets for the user provided service.
-
-    $ cf update-user-provided-service translate-secrets -p <(bin/create-user-provided-service.sh git-ssh-key)
+    $ pootle init
 
 
 ## Pootle evaluation

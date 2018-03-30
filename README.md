@@ -24,7 +24,7 @@ Team members:
 
 - Aaron D Borden, software developer, [18F](https://18f.gsa.gov/)
 
-Advisors:
+Advisers:
 
 - Laura Godfrey, Multilingual Strategies Lead, [Office of Products and Platforms](https://www.gsa.gov/about-us/organization/federal-acquisition-service/technology-transformation-services/office-of-products-and-programs)
 

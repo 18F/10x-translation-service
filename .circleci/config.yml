@@ -18,11 +18,12 @@ jobs:
           CF_SPACE: aaron.borden
     steps:
       - checkout
-      - run: Configure cf
-        command: |
-          cf api "$CF_API"
-          cf auth "$CF_DEPLOY_USER" "$CF_DEPLOY_PASSWORD"
-          cf target -o "$CF_ORG" -s "CF_SPACE"
+      - run:
+          name: Configure cf
+          command: |
+            cf api "$CF_API"
+            cf auth "$CF_DEPLOY_USER" "$CF_DEPLOY_PASSWORD"
+            cf target -o "$CF_ORG" -s "$CF_SPACE"
       - run:
           name: Publish to git
           # TODO monitor the results with cf logs and cf tasks
@@ -37,7 +38,7 @@ workflows:
   daily:
     triggers:
       - schedule:
-          cron: "0 17 * * *"
+          cron: "0,30 * * * *"
           filters:
             branches:
               only:

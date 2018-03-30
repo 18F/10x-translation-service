@@ -48,7 +48,14 @@ the [GitHub issues](https://github.com/18F/10x-translation-service/issues). At
 the end of this Phase, we'll identify work that we think will be good candidates
 for [Phase II: Discovery](https://github.com/18F/10x-translation-service/milestone/1).
 
-We post progress updates in [updates](updates).
+We post weekly progress updates in [updates](updates).
+
+
+## Investigation
+
+- [Use cases](use-cases)
+- [Workflow](workflow.md)
+- [Additional resources](resources.md)
 
 
 ## Initial setup

@@ -15,10 +15,8 @@ this plan.
 
 ## Questions for translation projects
 
-1. Tell us about your project and your role.
-1. How many languages do you publish in your project?
-1. Do you translate all of your website content into all the languages? If
-   not, how do you go about deciding what should be translated?
+1. Tell us about your day-to-day and your role.
+1. How do you go about deciding what should be translated?
 1. Do you translate non-content website copy, such as menus, footers,
    and other micro-copy?
 1. How does your project manage new content for translation?
@@ -28,6 +26,10 @@ this plan.
 1. What kinds of quality control do you have in place to verify translations?
 1. Does your project perform usability sessions, and if so, do you also test
    translated content?
+
+Follow up questions for email.
+
+1. How many, and what languages do you publish in your project?
 
 
 ## Usability scenarios

@@ -3,7 +3,7 @@
 # 10x Open Source Translation Service
 
 _We are currently in the initial phase of [10x](https://10x.gsa.gov/):
-Investigation. This phase is two weeks long and ends approximately March 30th,
+Investigation. This phase is two weeks long and ends approximately April 4th,
 2018._
 
 > 60.6 million Americans are not fluent in English. Despite this, most federal

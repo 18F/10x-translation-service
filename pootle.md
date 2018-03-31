@@ -3,6 +3,13 @@ title: Pootle
 ---
 # Pootle
 
+[Pootle][pootle] is an open source localization and translation server. It
+facilitates translation workflows using standard localization formats like PO
+and XLIFF, enforces quality checks on translations, shares translations across
+projects using Translation Memory, and can even use Machine Translation to seed
+new languages.
+
+
 ## Workflow
 
 

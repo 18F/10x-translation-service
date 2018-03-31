@@ -96,6 +96,16 @@ How to hack on Pootle.
 
 ### Setup
 
+Install the dependencies.
+
+    $ pip install -r requirements.txt
+
 Create a local configuration file.
 
     $ pootle init
+
+Run the server.
+
+    $ pootle runserver --insecure
+
+Open your web browser to [http://localhost:8000/](http://localhost:8000/).

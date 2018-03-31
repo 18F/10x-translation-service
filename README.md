@@ -10,8 +10,8 @@ Investigation. This phase is two weeks long and ends approximately April 4th,
 > web content is only available in English. Having content available in multiple
 > languages will make the information we produce more accessible to the members
 > of the public whose primary language is not English. This can be done with
-> existing open source tools for delivering localized content such as Pootle and
-> gettext. TTS will investigate whether translation services could be shared as
+> existing open source tools for delivering localized content such as [Pootle][pootle] and
+> [gettext][gettext]. [TTS][tts] will investigate whether translation services could be shared as
 > a GSA-sponsored service or as a reusable playbook.
 
 The goal of this initial phase is to investigate if there is an opportunity
@@ -31,11 +31,11 @@ Advisers:
 
 ## Tasks
 
-1. Setup an instance of Pootle
-1. Pilot a translation service with a single multilingual project
-1. Demonstrate how content gets in and how translations get out
-1. Get feedback
-1. Document what worked and what did not
+1. Setup an instance of [Pootle][pootle].
+1. Pilot a [translation service][translate-app] with a single multilingual project.
+1. Demonstrate how content gets in and how translations get out.
+1. Get feedback.
+1. Document what worked and what did not and any opportunities.
 
 
 ## Progress
@@ -82,3 +82,9 @@ This project is in the worldwide [public domain](LICENSE.md). As stated in [CONT
 > This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 >
 > All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
+
+
+[gettext]: https://www.gnu.org/software/gettext/
+[pootle]: http://pootle.translatehouse.org/
+[translate-app]: https://translate.app.cloud.gov/projects/usa-gov-example/
+[tts]: https://www.gsa.gov/about-us/organization/federal-acquisition-service/technology-transformation-services

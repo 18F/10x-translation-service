@@ -60,16 +60,6 @@ We post weekly progress updates in [updates](updates).
 - [Additional resources](resources.md)
 
 
-## Configuration
-
-### Permissions
-
-By default, Pootle allows anonymous users to suggest translations. Projects may
-wish to disable this in the [permissions
-settings](https://translate.app.cloud.gov/admin/permissions/). We have disabled
-anonymous suggestions for Phase I.
-
-
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md) for additional information.

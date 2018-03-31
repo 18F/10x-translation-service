@@ -55,4 +55,14 @@ Pootle sends out emails for registrations and notifications. The settings use an
 SMTP configuration.
 
 
+## Configuration
+
+### Permissions
+
+By default, Pootle allows anonymous users to suggest translations. Projects may
+wish to disable this in the [permissions
+settings](https://translate.app.cloud.gov/admin/permissions/). We have disabled
+anonymous suggestions for Phase I.
+
+
 [pootle]: http://pootle.translatehouse.org/

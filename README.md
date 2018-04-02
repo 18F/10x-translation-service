@@ -64,6 +64,10 @@ We post weekly progress updates in [updates](updates).
 
 See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
 
+Join us in
+[#10x-opn-src-trnsltion](https://gsa-tts.slack.com/messages/C9S0B4A5U) or [ask
+us a question](https://github.com/18F/10x-translation-service/issues/new).
+
 
 ## Public domain
 

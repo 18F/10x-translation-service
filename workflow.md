@@ -4,7 +4,8 @@ This documents the existing workflow one would use with Pootle. There are areas
 where we can improve and hope to add functionality.
 
 _TODO: split out these workflows based on target audience. This contains some
-very technical information not meant for Translators or Content Managers._
+very technical information not meant for Translators or Content Managers. This
+is still very rough._
 
 
 ## For content managers

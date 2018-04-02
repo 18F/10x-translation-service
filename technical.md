@@ -3,7 +3,14 @@ title: Technical findings
 ---
 # Technical findings
 
-## Pootle initial setup
+[Pootle][pootle] is a [Django](https://www.djangoproject.com/) web application
+written with [Python](https://www.python.org/) 2.
+
+We've deployed a [demo instance](https://translate.app.cloud.gov/projects/) to
+[cloud.gov](https://cloud.gov/) for this Investigation.
+
+
+## Initial setup on cloud.gov
 
 Follow these instructions to setup an instance of Pootle on cloud.gov.
 
@@ -28,7 +35,7 @@ repo's `Settings > Deploy keys`.
 
 Create the JSON secrets for the user-provided service.
 
-    $ cf update-user-provided-service translate-secrets -p <(bin/create-user-provided-service.sh git-ssh-key)
+    $ cf create-user-provided-service translate-secrets -p <(bin/create-user-provided-service.sh git-ssh-key)
 
 Push the application and worker.
 
@@ -123,3 +130,14 @@ API](https://platform-api.usa.gov/#!/text_assets/Api_V1_TextAssets_show).
 This outputs content for a POT file to be used as the template. Rename this to
 `templates.pot` and commit it to the [translations
 repo](https://github.com/adborden/usa-gov-example-translations).
+
+
+## What you should backup
+
+This is just an evaluation project for the initial Phase, so the demo instance
+will not be around forever, however we'll [grab
+a snapshot](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/server/backup.html)
+of the data in case we want to revive it in a future phase.
+
+
+[pootle]: http://pootle.translatehouse.org/

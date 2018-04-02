@@ -97,18 +97,21 @@ would be needed to automate and improve it for government translation projects.
 
 Translation Memory (TM) aids translators in re-using existing translations for
 similar phrases. If shared across the federal government, there is a lot of TM
-available which reduces the work load on translators.
+available which reduces the workload on translators.
 
 TM is supported out of the box using an external [Translation Memory
 service](http://amagama.translatehouse.org/). You can setup an instance of
 Elasticsearch for a private TM server instance.
 
-Pootle supports multiple TM servers, so it will keep a local instance up to
-date, but can still use an external one for read-only lookups from external
-projects.
+Pootle supports multiple TM instances at the same time, so it will keep a local
+instance up to date, but can still use an external one for read-only lookups
+from external projects.
 
 For projects that wish to have their own Pootle instance, they can share TM
 across instances by sharing the TM server.
+
+You could also configure topic-specific TM servers. For example, all government
+health-related projects could share a TM instance.
 
 
 ### Machine translation
@@ -116,7 +119,7 @@ across instances by sharing the TM server.
 We did not evaluate Pootle's [machine
 translation](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/machine_translation.html)
 features. However, [Google Translate](https://cloud.google.com/translate/) (paid
-service) and [Yandex](https://tech.yandex.com/translate/) (free) are both
+service) and [Yandex](https://tech.yandex.com/translate/) (free + paid) are both
 supported.
 
 

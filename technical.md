@@ -109,3 +109,17 @@ Run the server.
     $ pootle runserver --insecure
 
 Open your web browser to [http://localhost:8000/](http://localhost:8000/).
+
+
+## Import/export of content
+
+https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html
+
+For the purposes of Phase I, we loaded in some sample content from [USA.gov's
+API](https://platform-api.usa.gov/#!/text_assets/Api_V1_TextAssets_show).
+
+    $ node index.js > templates.pot
+
+This outputs content for a POT file to be used as the template. Rename this to
+`templates.pot` and commit it to the [translations
+repo](https://github.com/adborden/usa-gov-example-translations).

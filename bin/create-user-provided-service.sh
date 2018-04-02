@@ -15,9 +15,12 @@ fi
 
 set -o nounset
 
+read -e -p 'Yandex API key> ' yandex_api_key
+
 cat <<EOF
 {
   "secret_key": "$(python -c 'import random,string; print("".join(random.choice(string.ascii_letters + string.digits) for _ in range(50)))')",
-  "ssh_key": $(python -c 'import json,sys; print(json.dumps(sys.stdin.read()))' < "$ssh_key_file")
+  "ssh_key": $(python -c 'import json,sys; print(json.dumps(sys.stdin.read()))' < "$ssh_key_file"),
+  "yandex_api_key": "$yandex_api_key"
 }
 EOF

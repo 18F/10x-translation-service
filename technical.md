@@ -33,7 +33,10 @@ Create an SSH key to sync with Git.
 Add this key as a write/deploy key in the project. In GitHub, this is under the
 repo's `Settings > Deploy keys`.
 
-Create the JSON secrets for the user-provided service.
+(Optional) Grab a [free Yandex API key](https://tech.yandex.com/translate/) to enable machine translation.
+
+Create the JSON secrets for the user-provided service. _Note: you'll be prompted
+for the Yandex API key. If you opted not to use it, just hit enter._
 
     $ cf create-user-provided-service translate-secrets -p <(bin/create-user-provided-service.sh git-ssh-key)
 

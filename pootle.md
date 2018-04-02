@@ -83,8 +83,8 @@ be used with CMS projects but it does mean there is an extra step to getting
 translations from Pootle into a CMS. Some CMS, like Drupal, support importing
 translations from the PO format.
 
-This workflow is successful in our Investigation, but more effort would be
-needed to automate and improve it for government translation projects.
+This workflow is viable for the purposes of our Investigation but more effort
+would be needed to automate and improve it for government translation projects.
 
 
 ## Feature evaluation

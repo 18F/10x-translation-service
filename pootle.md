@@ -7,7 +7,7 @@ title: Pootle
 facilitates translation workflows using standard localization formats like PO
 and XLIFF, enforces quality checks on translations, shares translations across
 projects using Translation Memory, and can even use Machine Translation to seed
-new languages.
+new translations.
 
 
 ## Workflow
@@ -21,29 +21,25 @@ Conceptual roles:
 Role | Description
 ---  | ---
 Content Manager | Manages the project or website. Exports content to be translated and submits it to the Translation Service. Imports updated translations back into the project or website.
-Translator | Looks over strings/content to be translated and suggests translations.
+Translator | Looks over content to be translated and suggests translations.
 Reviewer | Reviews and accepts translations to be used in the project.
 
 
-This is the translation cycle. It's usually not a one-time thing since content
-is constantly changing and evolving.
+### Translation cycle
 
-1. Content manager identifies new content to be translated.
-1. Content manager exports the content to be translated and submits it to the
+This is the translation cycle. Translating your project is not a one-time task
+since content is constantly changing and evolving.
+
+1. Content Manager identifies new content to be translated.
+1. Content Manager exports the content to be translated and submits it to the
    Translation Service.
 1. Translators review the content and suggest translations.
 1. Reviewers review the translations and accept or reject the translations,
    providing comments when necessary.
-1. When translations are ready, content manager imports the translations into
-   their project.
+1. When new translations are available, the Content Manager imports the
+   translations into their project or website.
 
-Translations are suggested before they are accepted into the project or website.
-
-
-### Suggestions
-
-Team members review strings to be translated and suggest translations. The
-translations are approved.
+Translations are reviewed before they are accepted into the project or website.
 
 
 ### Problematic content
@@ -56,16 +52,19 @@ translators to see.
 
 ### Team roles
 
-From [permission
+From the [permission
 docs](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/permissions.html#action-permissions),
 there are different permissions that can be set within a language team.
 
 Role | Description
 ---  | ---
-Member | May submit suggestions.
+Member | May submit translation suggestions.
 Submitter | Can translate and make suggestions.
 Reviewer | In addition to translate and submit suggestions, can also review suggestions.
 Administrator | Can administer the team, adding team members and adjusting roles. May edit the announcement of the team. Plus all rights of the Reviewer.
+
+This provides flexibility in how Pootle can be configured based on
+existing government translation workflows.
 
 
 ## Import/export of content
@@ -96,7 +95,11 @@ needed to automate and improve it for government translation projects.
 
 ### Translation Memory
 
-This is supported out of the box using an external [Translation Memory
+Translation Memory (TM) aids translators in re-using existing translations for
+similar phrases. If shared across the federal government, there is a lot of TM
+available which reduces the work load on translators.
+
+TM is supported out of the box using an external [Translation Memory
 service](http://amagama.translatehouse.org/). You can setup an instance of
 Elasticsearch for a private TM server instance.
 
@@ -104,8 +107,8 @@ Pootle supports multiple TM servers, so it will keep a local instance up to
 date, but can still use an external one for read-only lookups from external
 projects.
 
-For projects that wish to have their own Pootle instance, they can share TM by
-sharing the external TM server.
+For projects that wish to have their own Pootle instance, they can share TM
+across instances by sharing the TM server.
 
 
 ### Machine translation
@@ -123,7 +126,7 @@ Pootle sends out emails for registrations and notifications. The settings use an
 SMTP configuration. We did not configure email for this Investigation.
 
 
-### Formats
+### File formats
 
 Pootle is powered by the [Translate Toolkit][translate-toolkit] and supports
 [many file
@@ -137,7 +140,7 @@ Here is just a sample:
 
 Translate Toolkit also provides
 [converters](http://docs.translatehouse.org/projects/translate-toolkit/en/latest/commands/index.html#commands-converters)
-to convert many different formats.
+to convert many different file formats.
 
 
 ### User model
@@ -167,13 +170,18 @@ choose.
 
 ### Glossary and terminology
 
-Pootle's [Terminology
+The [Terminology
 feature](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/terminology.html)
 allows projects to configure a glossary of terms to help facilitate using
 standard set of terms across projects.
 
+This is critical to providing a consistent language experience across an agency
+and the federal government.
+
 
 ## Configuration
+
+We configured Pootle using its default settings. Noted are some of the changes.
 
 ### Permissions
 

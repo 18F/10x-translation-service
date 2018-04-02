@@ -110,10 +110,67 @@ sharing the external TM server.
 
 ### Machine translation
 
+We did not evaluate Pootle's [machine
+translation](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/machine_translation.html)
+features. However, [Google Translate](https://cloud.google.com/translate/) (paid
+service) and [Yandex](https://tech.yandex.com/translate/) (free) are both
+supported.
+
+
 ### Email
 
 Pootle sends out emails for registrations and notifications. The settings use an
-SMTP configuration.
+SMTP configuration. We did not configure email for this Investigation.
+
+
+### Formats
+
+Pootle is powered by the [Translate Toolkit][translate-toolkit] and supports
+[many file
+formats](http://docs.translatehouse.org/projects/translate-toolkit/en/latest/formats/index.html).
+Here is just a sample:
+
+- Gettext (po/pot)
+- XLIFF (xliff/xlf)
+- TS (ts)
+- Mozilla Lang (lang)
+
+Translate Toolkit also provides
+[converters](http://docs.translatehouse.org/projects/translate-toolkit/en/latest/commands/index.html#commands-converters)
+to convert many different formats.
+
+
+### User model
+
+Pootle can set permissions based on individual users.
+
+There is also a [language
+team](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/teams.html)
+model so teams can be organized around a single language, across projects.
+
+
+### User authentication
+
+Pootle uses [django-allauth](https://www.intenct.nl/projects/django-allauth/)
+for federated authorization. This provides us with a variety of ways to
+authorize users of the Translation Service.
+
+
+### Offline translation
+
+For translators used to working with the gettext and translate toolkit command
+line tools, Pootle provides a download of the translation files for [offline
+translations](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/offline.html).
+This also allows translators to do the translation in any external tool they
+choose.
+
+
+### Glossary and terminology
+
+Pootle's [Terminology
+feature](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/terminology.html)
+allows projects to configure a glossary of terms to help facilitate using
+standard set of terms across projects.
 
 
 ## Configuration
@@ -127,3 +184,4 @@ anonymous suggestions for Phase I.
 
 
 [pootle]: http://pootle.translatehouse.org/
+[translate-toolkit]: http://toolkit.translatehouse.org/

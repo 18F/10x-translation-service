@@ -116,11 +116,14 @@ health-related projects could share a TM instance.
 
 ### Machine translation
 
-We did not evaluate Pootle's [machine
+[Machine
 translation](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/machine_translation.html)
-features. However, [Google Translate](https://cloud.google.com/translate/) (paid
-service) and [Yandex](https://tech.yandex.com/translate/) (free + paid) are both
-supported.
+is available through [Google Translate](https://cloud.google.com/translate/) (paid
+service) and [Yandex](https://tech.yandex.com/translate/) (free + paid). We
+configured Yandex to provide machine translations.
+
+![Screenshot showing Yandex machine translate user
+interface](assets/machine-translation-demo.png)
 
 
 ### Email

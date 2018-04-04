@@ -1,8 +1,8 @@
 ---
+buildpack: python_buildpack
 applications:
 - name: translate
   command: bin/start.sh
-  buildpack: python_buildpack
   memory: 256M
 - name: translate-worker
   command: pootle rqworker
@@ -12,8 +12,8 @@ applications:
 env:
   POOTLE_SETTINGS: pootle.conf
 services:
+  - pootle-cache-default
+  - pootle-cache-lru
+  - pootle-cache-redis
   - pootle-database
-  - pootle-redis-1
-  - pootle-redis-2
-  - pootle-redis-3
   - translate-secrets

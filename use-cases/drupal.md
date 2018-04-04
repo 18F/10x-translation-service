@@ -56,6 +56,18 @@ opportunity to automate and improve the integration with Pootle or other PO/POT
 open source solutions.
 
 
+## Screenshots
+
+This is the configuration screen showing translations for a single node.
+
+![Screen showing titles of an article in English, Spanish, French, and Hungarian](../assets/drupal-multilingual-module-translation-screenshot.png)
+
+
+Edit screen for a node in Spanish.
+
+![Screen showing form for editing each field of the node](../assets/screencapture-dt70-ply-st-es-node-1-edit-2018-03-29-15_53_53.png)
+
+
 ## Resources
 
 - Drupal [Multilingual Guide][drupal-multilingual-guide].

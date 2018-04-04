@@ -196,6 +196,39 @@ wish to disable this in the [permissions
 settings](https://translate.app.cloud.gov/admin/permissions/). We have disabled
 anonymous suggestions for Phase I.
 
+## Screenshots
+
+Projects overview page.
+
+![Screen listing different projects, the progress of their translations, and
+recent activity](assets/projects-overview-demo.png)
+
+
+Language statistics for an individual project.
+
+![Screen showing total, translated, fuzzy, and untranslated string counts](assets/language-stats-demo.png)
+
+
+Translation UI.
+
+![Form showing English content with form to provide a translation, with other suggestions below](assets/translate-demo.png)
+
+
+Use government-wide terminology for consistent communication across the
+language.
+
+![Screen showing translated terminology alongside translation form](assets/terminology-demo.png)
+
+
+Review suggestions from translators.
+
+![Form to edit suggestion or provide a comment](assets/suggestion-review-demo.png)
+
+
+Report an issue with a string to the content manager.
+
+![Contact form to report a question or comment](assets/report-a-string-demo.png)
+
 
 [pootle]: http://pootle.translatehouse.org/
 [translate-toolkit]: http://toolkit.translatehouse.org/

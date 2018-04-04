@@ -22,9 +22,9 @@ Create a Redis instance for Poolte's workers. _Note: Pootle uses 3 DB indexes,
 however the Redis services on cloud.gov only support DB index 0, so instead we opt for
 three separate Redis instances._
 
-    $ cf create-service redis32 micro pootle-redis-1
-    $ cf create-service redis32 micro pootle-redis-2
-    $ cf create-service redis32 micro pootle-redis-3
+    $ cf create-service redis32 micro pootle-cache-default
+    $ cf create-service redis32 micro pootle-cache-redis
+    $ cf create-service redis32 micro pootle-cache-lru
 
 Create an SSH key to sync with Git.
 
@@ -141,6 +141,14 @@ This is just an evaluation project for the initial Phase, so the demo instance
 will not be around forever, however we'll [grab
 a snapshot](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/server/backup.html)
 of the data in case we want to revive it in a future phase.
+
+
+## Errata
+
+When replacing the `pootle-cache-redis` service, the "revision" is stored here
+and needs to be replaced.
+
+    $ cf run-task translate "pootle revision --restore" -m 128m
 
 
 [pootle]: http://pootle.translatehouse.org/

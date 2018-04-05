@@ -57,6 +57,7 @@ We post weekly progress updates in [updates](updates).
 - [Use cases](use-cases)
 - [Workflow](workflow.md)
 - [Technical findings](technical.md)
+- [Research plan](research-plan.md)
 - [Additional resources](resources.md)
 
 

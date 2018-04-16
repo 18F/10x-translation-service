@@ -15,8 +15,8 @@ website itself.
 First, site administrators mark the content to be translated. This can be
 entities or their fields.
 
-The Drupal project translates its core components using it's own translation
-server, [localize.drupal.org][localize-drupal] which is powered by
+The Drupal project translates its core components using its own translation
+server, [localize.drupal.org][localize-drupal], which is powered by
 [l10n_server][l10n_server], a Drupal project. Fundamentally, it's very similar
 to how Pootle works. Content is uploaded to the translation server in a standard
 format (PO). Translators get to work on the content. Translations are pulled

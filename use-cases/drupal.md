@@ -46,9 +46,7 @@ click "Launch sandbox" and login with admin/admin username and password.
 The modules provided by Drupal will not work directly with Pootle. However,
 under the hood, Drupal is using the same PO/POT file format.
 
-A Content Manager can export translatable content at `/admin/config/regional/translate/export`,
-select "Source text only, no translations" and click "Export". This will
-download the POT file with all your content to be used with Pootle.
+A user with sufficient permissions can export translatable content at `/admin/config/regional/translate/export`, select "Source text only, no translations" and click "Export". This will download the POT file with all your content to be used with Pootle.
 
 Similarly, you can import your PO files when translations are ready. There is an
 opportunity to automate and improve the integration with Pootle or other PO/POT

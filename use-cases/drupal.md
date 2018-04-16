@@ -34,8 +34,7 @@ the Drupal site itself. This gives the translator the most context for
 translation since they can see the translated content right there on the
 website.
 
-Drush offers [language commands](https://www.drupal.org/project/drush_language)
-for creating new languages, importing, and exporting to PO format.
+[Language commands](https://www.drupal.org/project/drush_language) are available for [Drush](https://www.drush.org), enabling you to create new languages, import PO files, and export to PO format.
 
 You can see an example of a Drupal 8 instance running with multilingual support on
 [simplytest.me](https://simplytest.me/project/multilingual_demo/8.x-1.x). Just

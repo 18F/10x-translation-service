@@ -36,12 +36,12 @@ workflows:
       - test
 
   daily:
-    triggers:
-      - schedule:
-          cron: "0,30 * * * *"
-          filters:
-            branches:
-              only:
-                - master
+    # triggers:
+    #   - schedule:
+    #       cron: "0,30 * * * *"
+    #       filters:
+    #         branches:
+    #           only:
+    #             - master
     jobs:
       - publish-to-git

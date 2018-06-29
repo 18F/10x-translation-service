@@ -1,19 +1,24 @@
 ---
-buildpack: python_buildpack
-applications:
-- name: translate
-  command: bin/start.sh
-  memory: 256M
-- name: translate-worker
-  command: pootle rqworker
-  health-check-type: process
-  memory: 128M
-  no-route: true
-env:
+env: &env
   POOTLE_SETTINGS: pootle.conf
-services:
+services: &services
   - pootle-cache-default
   - pootle-cache-lru
   - pootle-cache-redis
   - pootle-database
   - translate-secrets
+applications:
+- name: translate
+  buildpack: python_buildpack
+  command: bin/start.sh
+  env: *env
+  memory: 256M
+  services: *services
+- name: translate-worker
+  buildpack: python_buildpack
+  command: pootle rqworker
+  env: *env
+  health-check-type: process
+  memory: 128M
+  no-route: true
+  services: *services

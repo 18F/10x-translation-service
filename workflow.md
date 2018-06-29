@@ -62,7 +62,7 @@ Click "Update filesystem configuration".
 
 Next an Operator needs to sync Pootle with the git repo.
 
-    $ cf run-task --name pootle-sync translate 'bin/sync-git.sh' -m 128m
+    $ cf run-task --name pootle-sync translate 'bin/sync-git.sh <project-code>' -m 128m
 
 
 ### Adding new languages

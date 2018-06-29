@@ -6,6 +6,8 @@
 set -o errexit
 set -o pipefail
 
+trap cleanup EXIT
+
 ssh_key_file=${1}
 if [[ -z "$ssh_key_file" ]]; then
   echo "$0: <ssh-key-file>" >&2
@@ -17,10 +19,18 @@ set -o nounset
 
 read -e -p 'Yandex API key> ' yandex_api_key
 
-cat <<EOF
+json_file=$(mktemp)
+
+cat <<EOF > "$json_file"
 {
   "secret_key": "$(python -c 'import random,string; print("".join(random.choice(string.ascii_letters + string.digits) for _ in range(50)))')",
   "ssh_key": $(python -c 'import json,sys; print(json.dumps(sys.stdin.read()))' < "$ssh_key_file"),
   "yandex_api_key": "$yandex_api_key"
 }
 EOF
+
+cf create-user-provided-service translate-secrets -p "$json_file"
+
+function cleanup () {
+  [[ -f "$json_file" ]] && rm "$json_file"
+}

@@ -38,7 +38,7 @@ repo's `Settings > Deploy keys`.
 Create the JSON secrets for the user-provided service. _Note: you'll be prompted
 for the Yandex API key. If you opted not to use it, just hit enter._
 
-    $ cf create-user-provided-service translate-secrets -p <(bin/create-user-provided-service.sh git-ssh-key)
+    $ bin/create-user-provided-service.sh git-ssh-key
 
 Push the application and worker.
 
@@ -58,6 +58,9 @@ SSH into the instance to create the admin user.
     $ cd app
     $ pootle createsuperuser --username admin
     $ pootle verify_user admin
+
+If you need to add a project, the instructions are
+[here](https://github.com/18F/10x-translation-service/blob/master/workflow.md#initial-project-setup).
 
 
 ### Continuous integration tasks

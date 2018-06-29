@@ -59,6 +59,9 @@ SSH into the instance to create the admin user.
     $ pootle createsuperuser --username admin
     $ pootle verify_user admin
 
+If you need to add a project, the instructions are
+[here](https://github.com/18F/10x-translation-service/blob/master/workflow.md#initial-project-setup).
+
 
 ### Continuous integration tasks
 
